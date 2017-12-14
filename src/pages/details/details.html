@@ -1,0 +1,33 @@
+<!--
+  Generated template for the DetailsPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar  color="secondary">
+    <ion-title>{{(details || {title: "vazio"}).title }}</ion-title>
+  </ion-navbar>
+
+</ion-header >
+
+
+<ion-content >
+
+    <ion-list *ngFor="let detail of details.list" >
+        <ion-item>
+          <ion-avatar item-start class="circle" [ngStyle]="{'background-color':details.color}"> 
+            <p class="pItem" >{{detail.title.substr(0,2).toUpperCase()}}</p>
+          </ion-avatar>
+          <span>
+            {{detail.subtitle}}
+          </span>
+          <span item-end>R$ {{detail.total}}</span>
+     
+          <p>{{detail.title}}</p>
+        </ion-item>
+      </ion-list>
+
+
+</ion-content>
